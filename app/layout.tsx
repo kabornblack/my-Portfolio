@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import { ModeToggle } from "@/components/mode-toggle";
+import { Providers } from "./theme-provider";
+import ParticlesComponent from "@/components/Particles";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,7 +31,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Providers>
+          {children}
+          <div className="fixed bottom-5 right-8 z-50 animate-bounce hover:animate-none">
+            <ModeToggle />
+          </div>
+          <ParticlesComponent />
+        </Providers>
       </body>
     </html>
   );
