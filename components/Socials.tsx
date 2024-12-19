@@ -3,11 +3,16 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaUserCircle, FaGithub, FaLinkedin } from "react-icons/fa";
+import {
+  FaUserCircle,
+  FaGithub,
+  FaLinkedin,
+  FaBriefcase,
+} from "react-icons/fa";
 
 function Socials() {
   return (
-    <div className="flex gap-16">
+    <div className="flex gap-8 md:gap-16">
       {/* Linkedin Link */}
       <motion.div
         initial={{ scale: 0.5, opacity: 0 }}
@@ -38,7 +43,7 @@ function Socials() {
         </Link>
       </motion.div>
 
-      {/* GitHub Link */}
+      {/* Portfolio Link */}
       <motion.div
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -48,7 +53,7 @@ function Socials() {
           href="/portfolio"
           className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
         >
-          <FaGithub className="w-10 h-10" />
+          <FaBriefcase className="w-10 h-10" />
         </Link>
       </motion.div>
 

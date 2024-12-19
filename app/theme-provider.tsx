@@ -3,9 +3,9 @@
 import { ThemeProvider } from "next-themes";
 import { useState, useEffect } from "react";
 
-interface Props {
-  children: React.ReactNode;
-}
+// interface Props {
+//   children: React.ReactNode;
+// }
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
