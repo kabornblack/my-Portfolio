@@ -12,27 +12,27 @@ function page() {
       <Header />
       <section
         id="hero"
-        className="snap-start h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-800"
+        className="snap-start min-h-screen flex items-center justify-center "
       >
         <Hero />
       </section>
       <section
         id="about"
-        className="snap-start h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-800"
+        className="snap-start min-h-screen flex items-center justify-center"
       >
         <About />
       </section>
 
       <section
         id="skills"
-        className="snap-start h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-800"
+        className="snap-start min-h-screen flex items-center justify-center"
       >
         <Skills />
       </section>
 
       <section
         id="contact"
-        className="snap-start h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-800"
+        className="snap-start min-h-screen flex items-center justify-center "
       >
         <Contact />
       </section>

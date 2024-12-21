@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { FaHome } from "react-icons/fa";
 
 const baseTabs = [
@@ -16,13 +15,6 @@ const baseTabs = [
 const Header = () => {
   const [activeTab, setActiveTab] = useState("hero");
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const pathname = usePathname();
-
-  useEffect(() => {
-    // Set the active tab based on the current path
-    const currentPath = pathname.slice(1) || "hero";
-    setActiveTab(currentPath);
-  }, [pathname]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,12 +26,38 @@ const Header = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Trigger when 50% of a section is visible
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry: IntersectionObserverEntry) => {
+        if (entry.isIntersecting) {
+          setActiveTab(entry.target.id); // Update the active tab based on the visible section
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+    const sections = document.querySelectorAll("section");
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
   return (
-    <div className="fixed top-0 left-0 w-full h-20 bg-transparent z-50">
+    <div className="fixed top-0 left-0 w-full h-20 z-50">
       <div className="flex items-center justify-between h-full px-4">
-        {/* Navigation container */}
         <nav className="w-full flex items-center justify-center pt-6">
-          {/* Home icon for larger screens */}
           {!isSmallScreen && (
             <div className="absolute left-8 top-10">
               <Link
@@ -50,16 +68,11 @@ const Header = () => {
               </Link>
             </div>
           )}
-
-          {/* Tabs with responsive sizing */}
           <div className="flex items-center justify-center gap-1 md:gap-2">
             {isSmallScreen && (
               <Link
                 href="/"
                 className={`relative rounded-full px-3 md:px-8 py-1.5 text-sm font-medium text-gray-800 dark:text-gray-300 outline-sky-400 transition focus-visible:outline-2`}
-                style={{
-                  WebkitTapHighlightColor: "transparent",
-                }}
                 onClick={() => setActiveTab("home")}
               >
                 {activeTab === "home" && (
@@ -78,9 +91,6 @@ const Header = () => {
                 key={tab.id}
                 href={tab.href}
                 className={`relative rounded-full px-3 md:px-8 py-1.5 text-sm font-medium text-gray-800 dark:text-gray-300 outline-sky-400 transition focus-visible:outline-2`}
-                style={{
-                  WebkitTapHighlightColor: "transparent",
-                }}
                 onClick={() => setActiveTab(tab.id)}
               >
                 {activeTab === tab.id && (

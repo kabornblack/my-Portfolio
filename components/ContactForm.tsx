@@ -39,18 +39,18 @@ function ContactForm() {
         viewport={{ once: true }}
         ref={form}
         onSubmit={sendEmail}
-        className="flex flex-col space-y-2 w-full max-w-2xl mx-auto text-gray-200 dark:text-gray-200 font-serif text-sm"
+        className="flex flex-col space-y-2 w-full max-w-2xl mx-auto text-gray-200 dark:text-gray-200 font-serif text-sm pt-2"
       >
         <div className="flex space-x-2">
           <input
-            className="w-full p-2 border border-gray-400 dark:border-gray-500 rounded-md outline-none text-slate-500 placeholder-gray-400 dark:placeholder-gray-500"
+            className="w-full p-2 border border-gray-400 dark:border-gray-500 rounded-md outline-none  text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
             name="name"
             type="text"
             placeholder="Name"
             required
           />
           <input
-            className="w-full p-2 border border-gray-400 dark:border-gray-500 rounded-md outline-none text-slate-500 placeholder-gray-400 dark:placeholder-gray-500"
+            className="w-full p-2 border border-gray-400 dark:border-gray-500 rounded-md outline-none  text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
             name="email"
             type="email"
             placeholder="Email"
@@ -59,7 +59,7 @@ function ContactForm() {
         </div>
         <div className="form-group">
           <input
-            className="w-full p-2 border border-gray-400 dark:border-gray-500 rounded-md outline-none text-slate-500 placeholder-gray-400 dark:placeholder-gray-500"
+            className="w-full p-2 border border-gray-400 dark:border-gray-500 rounded-md outline-none  text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
             name="subject"
             type="text"
             placeholder="Subject"
@@ -68,15 +68,15 @@ function ContactForm() {
         </div>
         <div className="form-group">
           <textarea
-            className="w-full p-2 h-28 border border-gray-400 dark:border-gray-500 rounded-md outline-none text-slate-500 placeholder-gray-400 dark:placeholder-gray-500"
+            className="w-full p-2 h-28 border border-gray-400 dark:border-gray-500 rounded-md outline-none text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
             name="message"
             placeholder="Message here.."
             required
           />
         </div>
-        <div className="form-group pt-8">
+        <div className="form-group pt-4">
           <button
-            className="px-6 py-3 top-6 border border-gray-400 dark:border-gray-500 rounded-full uppercase text-xs tracking-widest text-slate-500 placeholder-gray-400 dark:placeholder-gray-500 transition-all
+            className="px-6 py-3 top-3 border border-gray-400 dark:border-gray-500 rounded-full uppercase text-xs tracking-widest text-slate-500 placeholder-gray-400 dark:placeholder-gray-500 transition-all
             hover:border hover:bg-gray-800 hover:text-gray-400 active:cursor-wait mb-20"
             type="submit"
           >

@@ -3,10 +3,6 @@
 import { ThemeProvider } from "next-themes";
 import { useState, useEffect } from "react";
 
-// interface Props {
-//   children: React.ReactNode;
-// }
-
 export function Providers({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
@@ -15,13 +11,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
   }, []);
 
   if (!mounted) {
-    return <>{children}</>;
+    return <>{children}</>; // Prevents mismatched UI during hydration
   }
+
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      defaultTheme="dark" // Set default to dark mode
+      enableSystem={false} // Optional: Disable system preference
       disableTransitionOnChange
     >
       {children}

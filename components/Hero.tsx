@@ -2,8 +2,6 @@
 
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-// import BackgroundCircles from "./BackgroundCircles";
-// import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -12,7 +10,7 @@ export default function Hero() {
     words: [
       "Hi - The Name's Kabiru Shaibu",
       "Full Of Life And Love To--Code!",
-      "Dedicated, Disciplined, Organized, Professional",
+      "Dedicated, Disciplined and Organize",
       "I'm currently Available!",
     ],
     loop: 9,
@@ -22,9 +20,9 @@ export default function Hero() {
 
   return (
     <>
-      <div className="relative min-h-screen flex flex-col justify-center text-center py-28">
+      <div className="relative min-h-screen flex flex-col justify-center text-center pt-24">
         {/* <BackgroundCircles /> */}
-        <div className="z-30 flex flex-col items-center">
+        <div className="z-30 flex flex-col items-center pt-24 ">
           <motion.div
             initial={{
               x: 0,
@@ -46,7 +44,7 @@ export default function Hero() {
               className="h-52 w-52 rounded-full object-cover mb-24 -mt-40 md:mb-8 md:mt-0 space-y-5 hover:scale-110 transition duration-300 ease-in-out transform hover:transform"
             />
           </motion.div>
-          <div className="text-gray-700 dark:text-gray-200 pt-8">
+          <div className="text-gray-700 dark:text-gray-200 pt-4">
             <h2 className="text-2xl text-gray-700 dark:text-gray-200 font-thin uppercase pb-8 tracking-[5px] md:tracking-[5px] z-50">
               <span className="mr-4">software</span>engineer
             </h2>
