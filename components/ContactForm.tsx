@@ -33,56 +33,99 @@ function ContactForm() {
   return (
     <div>
       <motion.form
-        initial={{ x: 100, scale: 0.1, opacity: 0 }}
-        whileInView={{ x: 0, scale: 1, opacity: 1 }}
-        transition={{ duration: 1.2 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
         viewport={{ once: true }}
         ref={form}
         onSubmit={sendEmail}
         className="flex flex-col space-y-2 w-full max-w-2xl mx-auto text-gray-200 dark:text-gray-200 font-serif text-sm pt-2"
       >
-        <div className="flex space-x-2">
+        <motion.div
+          className="flex space-x-2"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 1 }}
+        >
           <input
-            className="w-full p-2 border border-gray-400 dark:border-gray-500 rounded-md outline-none  text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
+            className="w-full p-2 border border-gray-400 dark:border-gray-500 rounded-md outline-none text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
             name="name"
             type="text"
             placeholder="Name"
             required
           />
           <input
-            className="w-full p-2 border border-gray-400 dark:border-gray-500 rounded-md outline-none  text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
+            className="w-full p-2 border border-gray-400 dark:border-gray-500 rounded-md outline-none text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
             name="email"
             type="email"
             placeholder="Email"
             required
           />
-        </div>
-        <div className="form-group">
+        </motion.div>
+        {/* <motion.div
+          className="flex space-x-2"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 1 }}
+        >
           <input
-            className="w-full p-2 border border-gray-400 dark:border-gray-500 rounded-md outline-none  text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
+            className="w-full p-2 border border-gray-400 dark:border-gray-500 rounded-md outline-none text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
+            name="name"
+            type="text"
+            placeholder="Name"
+            required
+          />
+          <input
+            className="w-full p-2 border border-gray-400 dark:border-gray-500 rounded-md outline-none text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
+            name="email"
+            type="email"
+            placeholder="Email"
+            required
+          />
+        </motion.div> */}
+
+        <motion.div
+          className="form-group"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 1.2 }}
+        >
+          <input
+            className="w-full p-2 border border-gray-400 dark:border-gray-500 rounded-md outline-none text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
             name="subject"
             type="text"
             placeholder="Subject"
             required
           />
-        </div>
-        <div className="form-group">
+        </motion.div>
+
+        <motion.div
+          className="form-group"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.4 }}
+        >
           <textarea
             className="w-full p-2 h-28 border border-gray-400 dark:border-gray-500 rounded-md outline-none text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
             name="message"
             placeholder="Message here.."
             required
           />
-        </div>
-        <div className="form-group pt-4">
+        </motion.div>
+
+        <motion.div
+          className="form-group pt-4"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 1.6 }}
+        >
           <button
-            className="px-6 py-3 top-3 border border-gray-400 dark:border-gray-500 rounded-full uppercase text-xs tracking-widest text-slate-500 placeholder-gray-400 dark:placeholder-gray-500 transition-all
-            hover:border hover:bg-gray-800 hover:text-gray-400 active:cursor-wait mb-20"
+            className="px-6 py-3 top-3 border border-gray-400 dark:border-gray-500 rounded-full uppercase text-xs tracking-widest text-slate-500 placeholder-gray-400 dark:placeholder-gray-500 transition-all hover:border hover:bg-gray-800 hover:text-gray-400 active:cursor-wait mb-20"
             type="submit"
           >
             Submit
           </button>
-        </div>
+        </motion.div>
       </motion.form>
     </div>
   );

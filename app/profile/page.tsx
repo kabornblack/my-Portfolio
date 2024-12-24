@@ -18,7 +18,7 @@ function page() {
       </section>
       <section
         id="about"
-        className="snap-start min-h-screen flex items-center justify-center"
+        className="snap-center min-h-screen flex items-center justify-center"
       >
         <About />
       </section>

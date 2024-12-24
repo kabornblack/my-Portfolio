@@ -41,4 +41,20 @@ export const projects = [
     tags: ["React", "NextJs", "Typescript"],
     image: "/walmart.png",
   },
+  {
+    title: "Booking-Clone",
+    description: "Bookinbg.com user experience.",
+    githubUrl: "https://github.com/kabornblack/booking-clone",
+    liveUrl: "https://booking-clone-tau.vercel.app/",
+    tags: ["React", "NextJs", "Typescript"],
+    image: "/booking.png",
+  },
+  // {
+  //   title: "Secrets",
+  //   description: "App where logged-in users can post secret anonymously.",
+  //   githubUrl: "https://github.com/kabornblack/Secrets",
+  //   liveUrl: "https://booking-clone-tau.vercel.app/",
+  //   tags: ["NodeJS", "Express", "Passport", "MongoDB"],
+  //   image: "/secrets.png",
+  // },
 ];

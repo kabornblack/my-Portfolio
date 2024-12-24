@@ -1,4 +1,3 @@
-// components/Socials.jsx or components/Socials.tsx
 "use client";
 
 import Link from "next/link";
@@ -9,70 +8,103 @@ import {
   FaLinkedin,
   FaBriefcase,
 } from "react-icons/fa";
+import { IconType } from "react-icons";
+
+function SocialIcon({
+  icon: Icon,
+  href,
+  label,
+  delay = 0,
+}: {
+  icon: IconType;
+  href: string;
+  label: string;
+  delay?: number;
+}) {
+  return (
+    <motion.div
+      initial={{ scale: 0.5, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 1, delay }}
+      className="relative group"
+    >
+      <motion.div
+        className="absolute -top-20 -left-3 transform -translate-x-1/2 
+                   bg-gray-800 text-white px-2 py-1 rounded-lg text-sm
+                   opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                   transition-all duration-300 "
+        initial={{ y: 10 }}
+        whileHover={{ y: 0 }}
+      >
+        {label}
+        <div
+          className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 
+                      border-t-8 border-l-8 border-r-8 
+                      border-l-transparent border-r-transparent border-gray-800"
+        />
+      </motion.div>
+
+      <Link
+        href={href}
+        target={href.startsWith("http") ? "_blank" : undefined}
+        className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-600
+                   transition-all duration-300 relative"
+      >
+        <motion.div
+          whileHover={{
+            scale: 1.3,
+            rotate: 360,
+            transition: { duration: 0.3 },
+          }}
+        >
+          <Icon className="w-10 h-10" />
+        </motion.div>
+      </Link>
+    </motion.div>
+  );
+}
 
 function Socials() {
+  const socialLinks = [
+    {
+      icon: FaLinkedin,
+      href: "https://www.linkedin.com/in/kabiru-shaibu-a81082164/",
+      label: "LinkedIn",
+      delay: 0,
+    },
+    {
+      icon: FaGithub,
+      href: "https://github.com/kabornblack",
+      label: "GitHub",
+      delay: 0.2,
+    },
+    {
+      icon: FaBriefcase,
+      href: "/portfolio",
+      label: "Portfolio",
+      delay: 0.4,
+    },
+    {
+      icon: FaUserCircle,
+      href: "/profile",
+      label: "Profile",
+      delay: 0.6,
+    },
+  ];
+
   return (
     <div className="flex gap-8 md:gap-16">
-      {/* Linkedin Link */}
-      <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <Link
-          href="https://www.linkedin.com/in/kabiru-shaibu-a81082164/"
-          target="_blank"
-          className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
-        >
-          <FaLinkedin className="w-10 h-10" />
-        </Link>
-      </motion.div>
-
-      {/* GitHub Link */}
-      <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.4 }}
-      >
-        <Link
-          href="https://github.com/kabornblack"
-          target="_blank"
-          className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
-        >
-          <FaGithub className="w-10 h-10" />
-        </Link>
-      </motion.div>
-
-      {/* Portfolio Link */}
-      <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.4 }}
-      >
-        <Link
-          href="/portfolio"
-          className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
-        >
-          <FaBriefcase className="w-10 h-10" />
-        </Link>
-      </motion.div>
-
-      {/* Profile Link */}
-      <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.2 }}
-      >
-        <Link
-          href="/profile"
-          className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
-        >
-          <FaUserCircle className="w-10 h-10" />
-        </Link>
-      </motion.div>
+      {socialLinks.map((social, index) => (
+        <SocialIcon
+          key={index}
+          icon={social.icon}
+          href={social.href}
+          label={social.label}
+          delay={social.delay}
+        />
+      ))}
     </div>
   );
 }
 
-// Make sure to export default
 export default Socials;

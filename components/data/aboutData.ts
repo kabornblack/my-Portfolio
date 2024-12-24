@@ -9,6 +9,6 @@ export const textLines = [
   "and forge pathways to endless possibilities and opportunities",
   "bringing these moments of joy to nourish my soul",
   "reminding me of  life's balance between work and play",
-  "Thank you for visiting my page",
+  "Thank you for visiting my page.",
   "Stay intouch...",
 ];
