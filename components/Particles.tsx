@@ -74,7 +74,7 @@ const ParticlesComponent = () => {
             enable: true,
             area: 800,
           },
-          value: 20,
+          value: 8,
         },
         size: {
           value: { min: 2, max: 4 },
