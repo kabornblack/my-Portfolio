@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import Skill from "./Skill";
 import skillData, { tech } from "./data/skillData";
+import AnimatedCircles from "./AnimatedCircles";
 
 export default function Skills() {
   const ref = useRef(null);
@@ -11,6 +12,7 @@ export default function Skills() {
       ref={ref}
       className="flex relative flex-col text-center md:text-left px-10 py-10 justify-evenly mx-auto items-center max-w-7xl"
     >
+      <AnimatedCircles />
       <div className="flex flex-col items-center">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}

@@ -1,15 +1,15 @@
 export const projects = [
   {
     title: "C-U international school",
-    description: "Educational website with multiple languages",
+    description: "Educational website with multiple languages.",
     githubUrl: "https://github.com/kabornblack/C-U-Language-School",
     liveUrl: "https://www.cuilschool.ee/",
-    tags: ["React", "NextJs", "TypeScript", "Tailwind CSS"],
+    tags: ["React", "NextJs", "TypeScript", "Tailwind"],
     image: "/cuschool.png",
   },
   {
     title: "Swapify",
-    description: "A barter and donation platform",
+    description: "A barter and donation platform.",
     githubUrl: "https://github.com/swapify-ou",
     liveUrl: "https://www.swapify.ee",
     tags: ["React", "JavaScript", "NextJs", "Dart"],
@@ -17,8 +17,7 @@ export const projects = [
   },
   {
     title: "Upto-date",
-    description:
-      "App where you can share facts and other users can agree or disagree.",
+    description: "User can share facts and other users can agree or disagree.",
     githubUrl: "https://github.com/kabornblack/Upto-date",
     liveUrl: "https://uptodate-kabbi.netlify.app/",
     tags: ["HTML", "CSS", "React", "Superbase"],
@@ -26,8 +25,7 @@ export const projects = [
   },
   {
     title: "Disney-Clone",
-    description:
-      "A clone of the Disney website strickly for personal learning purpose",
+    description: "A clone of the Disney website strickly for learning.",
     githubUrl: "https://github.com/kabornblack/Disney-clone",
     liveUrl: "https://disney-clone-omega-henna.vercel.app/",
     tags: ["React", "NextJs", "TypeScript", "Tailwind"],
@@ -35,7 +33,7 @@ export const projects = [
   },
   {
     title: "Walmart-Clone",
-    description: "Walmart's online shopping experience.",
+    description: "Redesign of Walmart's website.",
     githubUrl: "https://github.com/kabornblack/walmart-clone",
     liveUrl: "https://walmart-clone-one-steel.vercel.app/",
     tags: ["React", "NextJs", "Typescript"],
@@ -43,7 +41,7 @@ export const projects = [
   },
   {
     title: "Booking-Clone",
-    description: "Bookinbg.com user experience.",
+    description: "Bookinbg.com user interface.",
     githubUrl: "https://github.com/kabornblack/booking-clone",
     liveUrl: "https://booking-clone-tau.vercel.app/",
     tags: ["React", "NextJs", "Typescript"],
@@ -51,10 +49,10 @@ export const projects = [
   },
   {
     title: "Secrets",
-    description: "App where logged-in users can post secret anonymously.",
+    description: "App where users can post secret anonymously.",
     githubUrl: "https://github.com/kabornblack/Secrets",
-    liveUrl: "https://booking-clone-tau.vercel.app/",
+    liveUrl: "https://secrets-nine-henna.vercel.app/",
     tags: ["NodeJS", "Express", "Passport", "MongoDB"],
-    image: "/secrets.png",
+    image: "/secret.jpeg",
   },
 ];

@@ -29,6 +29,7 @@ export const tech = [
   "ibm",
   "cloudflare",
   "azure",
+  // "zustand",
 ];
 
 const skillData = [

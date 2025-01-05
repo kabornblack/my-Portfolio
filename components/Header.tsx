@@ -123,7 +123,7 @@ const Header = () => {
               <Link
                 key={tab.id}
                 href={tab.href}
-                className="relative rounded-full px-3 md:px-8 py-1.5 text-sm font-medium text-gray-800 dark:text-gray-300 outline-sky-400 transition focus-visible:outline-2"
+                className="relative rounded-full px-3 md:px-8 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-300 transition focus-visible:outline-2 hover:border dark:hover:border"
                 onClick={(e) => {
                   e.preventDefault();
                   handleTabClick(tab.id);

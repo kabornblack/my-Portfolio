@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { MapPinIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import ContactForm from "./ContactForm";
+import AnimatedCircles from "./AnimatedCircles";
 
 function Contact() {
   const ref = useRef(null);
@@ -11,6 +12,7 @@ function Contact() {
       ref={ref}
       className="flex flex-col relative text-center px-10 justify-evenly max-w-3xl mx-auto items-center pt-20 pb-10"
     >
+      <AnimatedCircles />
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
