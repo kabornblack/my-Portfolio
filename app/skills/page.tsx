@@ -67,6 +67,12 @@ export default function Skills() {
         </div>
       </div>
 
+      <div className="py-20 blur-sm opacity-5">
+        <div className="bg-gradient-to-r from-gray-100 via-[#B8860B] to-gray-100 dark:from-gray-950 dark:via-[#B8860B] dark:to-gray-950 h-1" />
+        <div className="bg-gradient-to-r from-[#B8860B] via-gray-100 to-[#B8860B] dark:from-[#B8860B] dark:via-gray-950 dark:to-[#B8860B] h-1 " />
+        <div className="bg-gradient-to-r from-gray-100 via-[#B8860B] to-gray-100 dark:from-gray-950 dark:via-[#B8860B] dark:to-gray-950 h-1" />
+      </div>
+
       <div className="flex flex-col px-8 md:px-32 gap-2">
         {/* Project Details */}
         <div className="flex gap-3">
@@ -336,10 +342,10 @@ export default function Skills() {
               </li>
             </ul>
           </div>
-          <div className="relative hidden lg:block">
+          {/* <div className="relative hidden lg:block">
             <div className="w-3 h-3 bg-[#B8860B] rounded-full" />
             <div className="absolute justify-center w-1 h-80 bg-gradient-to-b from-[#B8860B] to-white dark:from-[#B8860B] dark:to-gray-950 ml-1 pt-1" />
-          </div>
+          </div> */}
         </div>
 
         {/* <div className="flex justify-end w-full h-auto"></div> */}

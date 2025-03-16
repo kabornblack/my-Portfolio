@@ -78,9 +78,6 @@ export default function ResetDiagram() {
   return (
     <div className="flex justify-center items-center min-h-screen w-screen pt-16">
       <div className="relative max-w-xl w-full p-20 aspect-square">
-        {/* <div className="absolute pt-[-400px]">
-          <h2>Software developer</h2>
-        </div> */}
         {/* Centered Image */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           <div className="w-28 md:w-44 h-28 md:h-44 rounded-full overflow-hidden ">
@@ -93,6 +90,7 @@ export default function ResetDiagram() {
             />
           </div>
         </div>
+
         {/* Largest circle - only visible on lg screens */}
         <motion.svg
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden lg:block w-[700px] h-[700px] opacity-15"
@@ -146,6 +144,7 @@ export default function ResetDiagram() {
             }}
           />
         </motion.svg>
+
         {/* Medium circle - your original circle */}
         <motion.svg
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[330px] md:w-[450px] h-[330px] md:h-[450px] opacity-15"
@@ -230,7 +229,7 @@ export default function ResetDiagram() {
         </motion.svg>
 
         <svg
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full animate-pulse"
           viewBox="-25 -25 140 140"
           fill="none"
         >
@@ -247,7 +246,7 @@ export default function ResetDiagram() {
               </textPath>
             </text>
             <text className="text-gray-600">
-              <textPath href="#curve2" startOffset="20%" className="text-[4px]">
+              <textPath href="#curve2" startOffset="15%" className="text-[4px]">
                 {textSegments.segment2}
               </textPath>
             </text>

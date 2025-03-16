@@ -4,7 +4,7 @@ export const tech = [
   "bootstrap",
   "sass",
   "tailwind",
-  "chadcn",
+  "shadcn",
   "javascript",
   "ejs",
   "react",
@@ -14,9 +14,7 @@ export const tech = [
   "nextjs",
   "nodejs",
   "express",
-  "hono",
-  "passport",
-  "liveblock",
+  "sanity",
   "sql",
   "mySQL",
   "mongoDB",
@@ -26,11 +24,11 @@ export const tech = [
   "Google-Cloud",
   "openai",
   "clerk",
-  "ibm",
   "cloudflare",
   "azure",
-  // "zustand",
+  "zustand",
 ];
+export const python = ["python"];
 
 const skillData = [
   {

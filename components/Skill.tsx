@@ -14,9 +14,9 @@ function Skill({ level, link }: Props) {
         width="56"
         height="56"
         alt="skill"
-        className="rounded-full border border-gray-500 object-cover w-12 h-12 lg:h-16 lg:w-16 filter group-hover:grayscale transition duration-300 ease-in-out"
+        className=" border border-gray-500 object-cover w-12 h-12 lg:h-16 lg:w-16 filter group-hover:grayscale transition duration-300 ease-in-out"
       />
-      <div className="absolute opacity-0 group-hover:opacity-90 transition duration-300 ease-in-out group-hover:bg-white w-12 h-12 lg:h-16 lg:w-16 rounded-full z-0">
+      <div className="absolute opacity-0 group-hover:opacity-90 transition duration-300 ease-in-out group-hover:bg-white w-12 h-12 lg:h-16 lg:w-16 z-0">
         <div className="flex items-center justify-center h-full">
           <p className="text-sm lg:text-xl font-bold text-gray-700 opacity-100">
             {level}

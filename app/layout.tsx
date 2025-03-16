@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
 import { ModeToggle } from "@/components/mode-toggle";
 import { Providers } from "./theme-provider";
 import ParticlesComponent from "@/components/Particles";
+import Header1 from "@/components/Header1";
+import { googleFonts } from "./google-fonts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <link href={googleFonts.href} rel={googleFonts.rel} />
+        <Header1 />
         <Providers>
           {children}
           <div className="fixed bottom-5 right-8 z-50 animate-bounce hover:animate-none">

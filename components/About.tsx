@@ -4,7 +4,6 @@ import React, { useRef, useState, useEffect } from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { textLines } from "./data/aboutData";
 import { motion } from "framer-motion";
-import AnimatedCircles from "./AnimatedCircles";
 
 // Remove the "export default" from here since we'll export at the end
 function About() {
@@ -63,13 +62,17 @@ function About() {
       ref={aboutRef}
       className="flex flex-col relative text-center px-10 py-16 justify-evenly max-w-3xl mx-auto"
     >
-      <AnimatedCircles />
+      {/* <AnimatedCircles /> */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="flex justify-center text-3xl font-serif font-bold tracking-[10px] uppercase text-gray-700 dark:text-gray-200 pb-8 pt-20">
+        <h2
+          className="flex justify-center text-3xl font-serif font-bold tracking-[10px] uppercase 
+        bg-gradient-to-r from-gray-300 via-gray-700 to-gray-300 dark:from-gray-700 dark:via-gray-300 dark:to-gray-700 
+        bg-clip-text text-transparent pb-8 pt-20"
+        >
           about
         </h2>
       </motion.div>

@@ -1,26 +1,51 @@
 "use client";
+import { useEffect, useState } from "react";
 
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Skills from "@/components/Skills";
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
+import Clients from "@/components/Clients";
 import AnimatedCircles from "@/components/AnimatedCircles";
+// import Header1 from "@/components/Header1";
 
-function page() {
+// function page() {
+
+function Page() {
+  const [showAnimation, setShowAnimation] = useState(true);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowAnimation(!entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+
+    const heroSection = document.querySelector("#me");
+    if (heroSection) {
+      observer.observe(heroSection);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth">
-      <Header />
+      {/* <Header /> */}
+      {/* <Header1 /> */}
+      {showAnimation && <AnimatedCircles />}
 
       <section
-        id="hero"
+        id="me"
         className="snap-start min-h-screen flex items-center justify-center "
       >
         <Hero />
       </section>
       <section
         id="about"
-        className="snap-center min-h-screen flex items-center justify-center"
+        className="snap-start min-h-screen flex items-center justify-center"
       >
         <About />
       </section>
@@ -33,6 +58,13 @@ function page() {
       </section>
 
       <section
+        id="clients"
+        className="snap-start min-h-screen flex items-center justify-center"
+      >
+        <Clients />
+      </section>
+
+      <section
         id="contact"
         className="snap-start min-h-screen flex items-center justify-center "
       >
@@ -42,4 +74,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
